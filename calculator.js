@@ -19,7 +19,7 @@ function equationClear()
 
 
 //combines numbers
-function combineNumbers()
+function startEquation()//call to start finding solution by merging numbers
 {
     for(let i = 1; i < equation.length; i++)//iterates length of equation arr
     {
