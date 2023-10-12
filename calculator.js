@@ -76,7 +76,7 @@ function mathy()
 {
     //math
     //mulitplication and division       
-    for(let l = 1; l < equation.length; l++)
+    for(let l = 1; l < equation.length;)
     {
         if(equation[l] == "*")
         {
@@ -84,17 +84,20 @@ function mathy()
             equation.splice(l, 2);
             updateText()
         }
-        if(equation[l] == "/")
+        else if(equation[l] == "/")
         {
             equation[l-1] = equation[l-1] / equation[l+1];
             equation.splice(l, 2);
             updateText()
         }
-
+        else
+        {
+            l++
+        }
     }
 
     //addition and subtraction
-    for(let l = 1; l < equation.length; l++)
+    for(let l = 1; l < equation.length; )
     {
         if(equation[l] == "+")
         {
@@ -102,13 +105,16 @@ function mathy()
             equation.splice(l, 2);
             updateText()
         }
-        if(equation[l] == "-")
+        else if(equation[l] == "-")
         {
             equation[l-1] = equation[l-1] - equation[l+1];
             equation.splice(l, 2);
             updateText()
         }
-
+        else
+        {
+            l++
+        }
     }
 
 
