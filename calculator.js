@@ -6,20 +6,32 @@ function equationAdd(ele)
 {
     equation.push(ele);
     console.log(equation);
+    updateText()
 }
 
 function equationremove()
 {
     equation.pop();
     console.log(equation);
+    updateText()
 }
 
 function equationClear()
 {
     equation = [];
     console.log(equation);
+    updateText()
 }
 
+function updateText()
+{
+    let output = "";
+for(let i = 0; i < equation.length; i++)
+{
+    output += equation[i].toString()
+}
+document.getElementById("output").innerHTML = output;
+}
 
 //combines numbers
 function startEquation()//merge numbers and turn them back into numbers, not strings
