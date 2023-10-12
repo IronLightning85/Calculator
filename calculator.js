@@ -38,7 +38,10 @@ function startEquation()//merge numbers and turn them back into numbers, not str
 {
     for(let i = 1; i < equation.length + 1;i++)//iterates length of equation arr minus one so last element is checked
     {
-        if(isFinite(equation[i-1]) && isFinite(equation[i]) || equation[i-1] == "." || equation[i] == "." || equation[i-1] == "_" || equation[i] == "_")//checks if equation[i] and the index before it are numbers
+        console.log(equation);
+        console.log(i)
+        
+        if(isFinite(equation[i-1]) && isFinite(equation[i]) || equation[i-1] == "." && isFinite(equation[i]) || isFinite(equation[i-1]) && equation[i] == "." || equation[i-1] == "_" && isFinite(equation[i]) || equation[i] == "_" && isFinite(equation[i-1]))//checks if equation[i] and the index before it are numbers or periods or _ which will turn into negatives
         {
             if(equation[i-1] == '_')
             {
@@ -56,6 +59,8 @@ function startEquation()//merge numbers and turn them back into numbers, not str
         }
 
     }
+    console.log(equation);
+
 
     //iterates through array to turn numbers into floats using parsefloat
     for(let j = 0; j < equation.length; j++)
@@ -65,6 +70,8 @@ function startEquation()//merge numbers and turn them back into numbers, not str
             equation[j] = parseFloat(equation[j]);//turn item at index j into float if it is finite
         }
     }
+    console.log(equation);
+
     
     updateText()
     //checks for invalid equations scuh as 1+- or 5**7
@@ -79,6 +86,7 @@ function startEquation()//merge numbers and turn them back into numbers, not str
             document.getElementById("output").innerHTML = "Invalid";
         }
     }
+    console.log(equation);
 mathy();
 }
 
