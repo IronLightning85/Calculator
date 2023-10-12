@@ -1,5 +1,30 @@
 body{
     background-color: antiquewhite;
     opacity: 0.6;
+    padding-top: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
+button{
+    color: black;
+    padding-top: 3%;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-bottom: 2%;
+}
+
+.btnBack{
+    padding-left: 4.3%;
+    padding-right: 5%;
+}
+
+.btnEql{
+    padding-left: 14%;
+    padding-right: 14%;
+}
+
+.btnPN{
+    padding-left: 2%;
+    padding-right: 3%;
+}
