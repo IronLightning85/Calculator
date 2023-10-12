@@ -64,7 +64,8 @@ function startEquation()//merge numbers and turn them back into numbers, not str
             //outputs invalid rightn now
             //implement text output later
             equation = [];
-            console.log("Invalid");
+            equationClear();
+            document.getElementById("output").innerHTML = "Invalid";
         }
     }
 
