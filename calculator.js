@@ -43,5 +43,19 @@ function startEquation()//merge numbers and turn them back into numbers, not str
             equation[j] = parseFloat(equation[j]);//turn item at index j into float if it is finite
         }
     }
-    console.log(equation);
+    
+    //checks for invalid equations scuh as 1+- or 5**7
+    for(let k = 1; k < equation.length; k++)
+    {
+        if(isNaN(equation[k-1]) && isNaN(equation[k]))
+        {
+            //outputs invalid rightn now
+            //implement text output later
+            equation = [];
+            console.log("Invalid");
+        }
+    }
+console.log(equation);//outputs array after all code is executed
 }
+
+
