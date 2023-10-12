@@ -38,8 +38,18 @@ function startEquation()//merge numbers and turn them back into numbers, not str
 {
     for(let i = 1; i < equation.length + 1;i++)//iterates length of equation arr minus one so last element is checked
     {
-        if(isFinite(equation[i-1]) && isFinite(equation[i]) || equation[i-1] == "." || equation[i] == "." )//checks if equation[i] and the index before it are numbers
+        if(isFinite(equation[i-1]) && isFinite(equation[i]) || equation[i-1] == "." || equation[i] == "." || equation[i-1] == "_" || equation[i] == "_")//checks if equation[i] and the index before it are numbers
         {
+            if(equation[i-1] == '_')
+            {
+                equation[i-1] = '-';
+            }
+            if(equation[i] == '_')
+            {
+                equation[i] = '-';
+            }
+        
+            
             equation[i-1] = '' + equation[i-1] + equation[i];//combines equation[i] and the index beofore
             equation.splice(i, 1);//removes element at index i
             i--;//subtracts one from i so it doesnt skip a number
@@ -56,6 +66,7 @@ function startEquation()//merge numbers and turn them back into numbers, not str
         }
     }
     
+    updateText()
     //checks for invalid equations scuh as 1+- or 5**7
     for(let k = 1; k < equation.length+1; k++)
     {
@@ -68,7 +79,6 @@ function startEquation()//merge numbers and turn them back into numbers, not str
             document.getElementById("output").innerHTML = "Invalid";
         }
     }
-
 mathy();
 }
 
