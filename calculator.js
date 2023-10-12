@@ -41,15 +41,11 @@ function startEquation()//merge numbers and turn them back into numbers, not str
         console.log(equation);
         console.log(i)
         
-        if(isFinite(equation[i-1]) && isFinite(equation[i]) || equation[i-1] == "." && isFinite(equation[i]) || isFinite(equation[i-1]) && equation[i] == "." || equation[i-1] == "_" && isFinite(equation[i]) || equation[i] == "_" && isFinite(equation[i-1]))//checks if equation[i] and the index before it are numbers or periods or _ which will turn into negatives
+        if(isFinite(equation[i-1]) && isFinite(equation[i]) || equation[i-1] == "." && isFinite(equation[i]) || isFinite(equation[i-1]) && equation[i] == "." || equation[i-1] == "_" && isFinite(equation[i]))//checks if equation[i] and the index before it are numbers or periods or _ which will turn into negatives
         {
             if(equation[i-1] == '_')
             {
                 equation[i-1] = '-';
-            }
-            if(equation[i] == '_')
-            {
-                equation[i] = '-';
             }
         
             
