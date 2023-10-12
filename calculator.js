@@ -57,9 +57,9 @@ function startEquation()//merge numbers and turn them back into numbers, not str
     }
     
     //checks for invalid equations scuh as 1+- or 5**7
-    for(let k = 1; k < equation.length; k++)
+    for(let k = 1; k < equation.length+1; k++)
     {
-        if(isNaN(equation[k-1]) && isNaN(equation[k]))
+        if(isNaN(equation[k-1]) && isNaN(equation[k]) || isNaN(equation[0]) || isNaN(equation[equation.length-1]))
         {
             //outputs invalid rightn now
             //implement text output later
@@ -67,7 +67,48 @@ function startEquation()//merge numbers and turn them back into numbers, not str
             console.log("Invalid");
         }
     }
-console.log(equation);//outputs array after all code is executed
+
+mathy();
 }
 
+function mathy()
+{
+    //math
+    //mulitplication and division       
+    for(let l = 1; l < equation.length; l++)
+    {
+        if(equation[l] == "*")
+        {
+            equation[l-1] = equation[l-1] * equation[l+1];
+            equation.splice(l, 2);
+            updateText()
+        }
+        if(equation[l] == "/")
+        {
+            equation[l-1] = equation[l-1] / equation[l+1];
+            equation.splice(l, 2);
+            updateText()
+        }
 
+    }
+
+    //addition and subtraction
+    for(let l = 1; l < equation.length; l++)
+    {
+        if(equation[l] == "+")
+        {
+            equation[l-1] = equation[l-1] + equation[l+1];
+            equation.splice(l, 2);
+            updateText()
+        }
+        if(equation[l] == "-")
+        {
+            equation[l-1] = equation[l-1] - equation[l+1];
+            equation.splice(l, 2);
+            updateText()
+        }
+
+    }
+
+
+}
