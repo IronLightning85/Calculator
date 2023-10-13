@@ -8,11 +8,12 @@
 <body>
 <table class="calculator">
     <tr>
+        
             <div class="box">
-                <h3>0</h3>
+                <h3 id = "output">0</h3>
             </div>
 
-        <button onclick="equationClear()">C</button> <button onclick="equationAdd('%')">%</button> <button class="btnBack" onclick="equtationRemove()">Back</button><br>
+        <button onclick="equationClear()">C</button> <button onclick="equationAdd('%')">%</button> <button class="btnBack" onclick="equationremove()">Back</button><br>
         <tr>
             <button onclick="equationAdd(1)">1</button>
             <button onclick="equationAdd(2)">2</button>
@@ -33,20 +34,14 @@
             <button onclick="equationAdd('-')">-</button><br>
         </tr>
 
-        <tr>
-            <button class="btnPN" onclick="equationAdd('(-)')">+/-</button>
-            <button onclick="equationAdd(0)">0</button>
-            <button onclick="equationAdd('.')">.</button>
-            <button onclick="equationAdd('+')">+</button><br>
-        </tr>
-        <button class="btnEql" onclick="startEquation()">=</button>
+<button class="btnPN" onclick="equationAdd('_')">+/-</button>
+<button onclick="equationAdd(0)">0</button>
+<button onclick="equationAdd('.')">.</button>
+<button onclick="equationAdd('+')">+</button><br>
 
-        </div>
-    </tr>
-    <!-- <div id="parent"> -->
-
-</table>
-
+<button class="btnEql" onclick="startEquation()">=</button>
+<ul id = "listy"></ul>
+</tr>
 
 </body>
 <script src="calculator.js"></script>
