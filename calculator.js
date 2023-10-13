@@ -148,13 +148,4 @@ function mathy()
         }
     }
 
-    //percentage
-    for(let l = 1; l < equation.length;)
-    {
-        if(equation[l] == "%")
-        {
-            equation
-        }
-    }
-
 }
