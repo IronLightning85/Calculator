@@ -40,3 +40,12 @@ button{
     padding-left: 10px;
     margin: .5px;
 }
+
+#listy{
+padding-top: 1%;
+background-color: gainsboro ;
+    width: 238px;
+    border: 2.5px solid black;
+    padding-left: 10px;
+    margin: .5px;
+}
