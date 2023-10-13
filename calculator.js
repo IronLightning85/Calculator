@@ -54,6 +54,7 @@ function updatehistory()//called after user hits = and code merges numbers
 //combines numbers
 function startEquation()//merge numbers and turn them back into numbers, not strings
 {
+    updatehistory();
     for(let i = 1; i < equation.length + 1;i++)//iterates length of equation arr minus one so last element is checked
     {    
         if(isFinite(equation[i-1]) && isFinite(equation[i]) || equation[i-1] == "." && isFinite(equation[i]) || isFinite(equation[i-1]) && equation[i] == "." || equation[i-1] == "_" && isFinite(equation[i]) || isFinite(equation[i-1]) && equation[i] == "%")//checks if equation[i] and the index before it are numbers or periods or _ which will turn into negatives
@@ -84,7 +85,7 @@ function startEquation()//merge numbers and turn them back into numbers, not str
             equation[j] = parseFloat(equation[j]);//turn item at index j into float if it is finite
         }
     }
-    updatehistory();
+    
 
     
     updateText()
