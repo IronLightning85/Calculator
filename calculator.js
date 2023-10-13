@@ -43,6 +43,11 @@ function updatehistory()//called after user hits = and code merges numbers
     }
     historyArr.push(equationString);//add the string to the hsitroy arr. history arr now array of strings
 
+    let list = document.getElementById("listy");
+    let li = document.createElement('h3');
+    li.innerText = equationString;
+    list.appendChild(li);
+
     //implement a display for history
 }
 
@@ -57,13 +62,12 @@ function startEquation()//merge numbers and turn them back into numbers, not str
             {
                 equation[i-1] = '-';
             }
-            if(equation[i] == '%')
+            if(equation[i] == "%")//veronica added % functionality but it saved incorrectly so i wrote it when i saved my work
             {
                 equation[i-1] = equation[i-1] / 100;
                 equation.splice(i,1);
             }
-            else
-            {
+            else{
             equation[i-1] = '' + equation[i-1] + equation[i];//combines equation[i] and the index beofore
             equation.splice(i, 1);//removes element at index i
             i--;//subtracts one from i so it doesnt skip a number
